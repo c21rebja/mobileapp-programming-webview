@@ -16,7 +16,7 @@ Den nya WebView-n:
         />
 ```
 
-WebView-n fick en variabel i java kopplades ihop med en WebViewClient:
+WebView-n fick en variabel i java och kopplades ihop med en WebViewClient:
 ```
     private WebView myWebView;
     private WebViewClient myWebClient;
