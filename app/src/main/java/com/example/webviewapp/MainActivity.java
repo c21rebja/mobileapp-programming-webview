@@ -1,11 +1,13 @@
 package com.example.webviewapp;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
@@ -16,6 +18,7 @@ import androidx.appcompat.widget.Toolbar;
 public class MainActivity extends AppCompatActivity {
 
     private WebView myWebView;
+    private WebViewClient myWebClient;
 
     public void showExternalWebPage(){
         // TODO: Add your code for showing external web page here
@@ -32,7 +35,11 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        myWebView = findViewById(R.id.my_webview);
+        myWebView = findViewById(R.id.my_webview); // add webview from content_main
+        myWebView.setWebViewClient(myWebClient); // set webclient to show urls in app
+
+        myWebView.getSettings().setJavaScriptEnabled(true); // enable java in webview
+
 
         /*
         * Rename your App. Tip: Values->Strings
