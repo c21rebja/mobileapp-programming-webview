@@ -22,10 +22,12 @@ public class MainActivity extends AppCompatActivity {
 
     public void showExternalWebPage(){
         // TODO: Add your code for showing external web page here
+        myWebView.loadUrl("https://wwwlab.iit.his.se/c21rebja/Mobilapplikationsdesign/app-prototype.html");
     }
 
     public void showInternalWebPage(){
         // TODO: Add your code for showing internal web page here
+        myWebView.loadUrl("file:///android_asset/internalPage.html");
     }
 
     @Override
@@ -39,7 +41,6 @@ public class MainActivity extends AppCompatActivity {
         myWebView.setWebViewClient(myWebClient); // set webclient to show urls in app
 
         myWebView.getSettings().setJavaScriptEnabled(true); // enable java in webview
-
 
         /*
         * Rename your App. Tip: Values->Strings
@@ -93,11 +94,13 @@ public class MainActivity extends AppCompatActivity {
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_external_web) {
             Log.d("==>","Will display external web page");
+            showExternalWebPage(); // calls the function to show the page
             return true;
         }
 
         if (id == R.id.action_internal_web) {
             Log.d("==>","Will display internal web page");
+            showInternalWebPage(); // calls the function to show the page
             return true;
         }
 
